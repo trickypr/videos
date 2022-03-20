@@ -10,7 +10,7 @@ class CircleJump(SpaceScene):
         objects = [
             Square(color=RED).move_to(UP).shift(UP * 3).shift(
                 UP * 6 * random()).shift(RIGHT * 6 * (random() - 0.5)).rotate(
-                    random() * 2 * PI).scale(circle_size) for _ in range(10)
+                    random() * 2 * PI).scale(circle_size) for _ in range(5)
         ]
 
         self.play(*[Write(obj) for obj in objects])

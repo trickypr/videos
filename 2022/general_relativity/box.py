@@ -13,3 +13,4 @@ class FloatingBox(Scene):
 
         self.play(Write(box), Write(contents))
         self.wait()
+        self.play(Unwrite(box), Unwrite(contents))

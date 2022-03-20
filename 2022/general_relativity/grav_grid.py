@@ -24,8 +24,8 @@ class GravityGrid(ThreeDScene):
         gauss_plane.set_style(fill_opacity=1, stroke_color=WHITE)
         gauss_plane.set_fill_by_checkerboard(GRAY, BLACK, opacity=0.1)
         axes = ThreeDAxes()
-        self.play(Write(axes), Write(gauss_plane))
-        self.wait()
+        self.play(Write(axes))
+        self.play(Write(gauss_plane))
 
         gravity_sphere = Sphere(radius=0.5, color=BLUE)
 
@@ -33,3 +33,5 @@ class GravityGrid(ThreeDScene):
             gauss_plane.animate.apply_function(
                 lambda p: param_gauss(p[0], p[1])), Write(gravity_sphere))
         self.wait()
+
+        self.play(Unwrite(gauss_plane), Unwrite(gravity_sphere), Unwrite(axes))
