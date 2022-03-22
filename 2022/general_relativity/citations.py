@@ -53,3 +53,13 @@ class Citation6(BasicCitation):
 class Citation7(BasicCitation):
     def number(self) -> str:
         return "7"
+
+
+class Citation8(BasicCitation):
+    def number(self) -> str:
+        return "8"
+
+
+class Citation9(BasicCitation):
+    def number(self) -> str:
+        return "9"
