@@ -27,13 +27,53 @@ class GravityGrid(ThreeDScene):
         self.play(Write(axes))
         self.play(Write(gauss_plane))
 
-        gravity_sphere = Sphere(radius=0.5, color=BLUE)
+        gravity_sphere = Sphere(radius=0.5, color=BLUE).move_to(IN * 1.5)
+
+        self.next_section()
 
         self.play(
             gauss_plane.animate.apply_function(
                 lambda p: param_gauss(p[0], p[1])), Write(gravity_sphere))
         self.wait()
 
+        self.next_section()
+
+        self.play(
+            Unwrite(gravity_sphere),
+            gauss_plane.animate.apply_function(
+                lambda p: np.array([p[0], p[1], 0])))
+
+        self.wait()
+
+        movement_sphere = Sphere(radius=0.1, color=RED,
+                                 resolution=(5, 5)).move_to(LEFT * 4)
+        self.play(Write(movement_sphere, run_time=0.5))
+        self.play(movement_sphere.animate.move_to(UP * 4))
+        self.wait()
+        self.play(Unwrite(movement_sphere, run_time=0.5))
+
+        self.next_section()
+
+        gravity_sphere = Sphere(radius=0.5, color=BLUE).move_to(IN * 1.5)
+        self.play(
+            gauss_plane.animate.apply_function(
+                lambda p: param_gauss(p[0], p[1])), Write(gravity_sphere))
+        self.wait()
+
+        movement_sphere = Sphere(radius=0.1, color=RED,
+                                 resolution=(5, 5)).move_to(LEFT * 4)
+        self.play(Write(movement_sphere, run_time=0.5))
+        self.play(
+            movement_sphere.animate.move_to(UP * 2 + LEFT * 2 + IN * 0.5), )
+
+        self.wait()
+
+        self.play(movement_sphere.animate.move_to(UP * 4), )
+        #   movement_sphere.animate.move_to(OUT * 1.5)
+
+        self.wait()
+        self.play(Unwrite(movement_sphere, run_time=0.5))
+        self.next_section()
         self.play(Unwrite(gauss_plane), Unwrite(gravity_sphere), Unwrite(axes))
 
 
