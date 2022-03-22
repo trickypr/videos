@@ -27,6 +27,15 @@ class BasicDrawArrow(Scene):
         self.play(Unwrite(arrow))
 
 
+class BasicDrawArrowShort(Scene):
+    def construct(self):
+        arrow = Arrow(start=LEFT, end=RIGHT, color=YELLOW)
+
+        self.play(Write(arrow))
+        self.wait()
+        self.play(Unwrite(arrow))
+
+
 class DrawSVG(Scene):
     def svg(self) -> str:
         return ""
@@ -47,3 +56,13 @@ class DrawShuttleDashed(DrawSVG):
 class DrawShuttleSolid(DrawSVG):
     def svg(self):
         return "shuttle_solid.svg"
+
+
+class LightDiagram(Scene):
+    def construct(self):
+        sun = Circle(radius=0.5, color=YELLOW).to_edge(RIGHT)
+        earth = Circle(radius=0.2, color=GREEN).to_edge(LEFT)
+
+        self.play(Write(sun), Write(earth))
+        self.wait()
+        self.play(Unwrite(sun), Unwrite(earth))
