@@ -10,7 +10,6 @@ current_file=''
 function def_file {
     current_file="$1.py"
     echo "Switching to $current_file"
-    mkdir -p "dist/$current_file"
 }
 
 function render {
