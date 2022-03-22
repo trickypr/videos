@@ -111,7 +111,7 @@ class Conclusions(Scene):
 class Endscreen(Scene):
     def construct(self):
         text = Text("Youtube thinks you will like:",
-                    font_size=100).to_edge(UP, 5.0)
+                    font_size=50).to_edge(UP, 1.0)
         self.play(Write(text))
         self.wait(20)
         self.play(Unwrite(text))
