@@ -36,6 +36,7 @@ function main {
 
     def_file "stars"
     render "StarBackground"
+    render "OrbitingPlanets"
 
     def_file "text"
     render "WaterbottleQuestion"
@@ -51,10 +52,12 @@ function main {
     render "DrawShuttleDashed"
     render "DrawShuttleSolid"
     render "BasicDrawArrow"
+    render "BasicDrawArrowShort"
+    render "LightDiagram"
 
     def_file "citations"
     render "CitationIntro"
-    for i in {1..7}; do
+    for i in {1..9}; do
         render "Citation$i"
     done
 }
