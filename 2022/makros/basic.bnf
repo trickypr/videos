@@ -1,0 +1,5 @@
+<statement> ::= <greeting> | <intro>
+
+<greeting>  ::= "Hello, " <identifier> ["!"]
+<intro>     ::= "Goodbye, " <identifier>
+

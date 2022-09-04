@@ -1,0 +1,11 @@
+<statement>     ::= (<function_def> | <function_call> | <if_statement>) [<statement>]
+
+<function_def>  ::= "def" <identifier> "():" INDENT <statement> DEDENT
+<function_call> ::= <identifier> "(" [<function_args>] ")"
+<function_args> ::= <exprs> ["," <function_args>]
+<if_statement>  ::= "if" <exprs> ":" INDENT <statement> DEDENT
+
+<exprs> = <compare> | <literal>
+
+<compare> = <literal> "==" <exprs>
+<literal> ::= NUMBER | STRING

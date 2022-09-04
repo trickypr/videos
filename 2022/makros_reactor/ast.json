@@ -1,0 +1,12 @@
+{
+  "type": "enum",
+  "name": "Animals",
+  "options": [
+    { "case": "Cat", "arguments": [] },
+    { "case": "Dog", "arguments": [] },
+    {
+      "case": "Other",
+      "arguments": [{ "name": "name", "type": "str" }]
+    }
+  ]
+}

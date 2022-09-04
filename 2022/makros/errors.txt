@@ -1,0 +1,36 @@
+Error at line 5: Expected NAME, found OP Expected the enum name
+        | enum : Animals:
+
+             ¯¯¯
+             Error found here
+Traceback (most recent call last):
+ File "/Users/school/Files/trickypr/pymacros/.venv/bin/makros", line 8, in <module>
+   sys.exit(cli())
+ File "/Users/school/Files/trickypr/pymacros/.venv/lib/python3.9/site-packages/makros/cli.py", line 45, in cli
+    ....
+ File "/Users/school/Files/trickypr/pymacros/.venv/lib/python3.9/site-packages/makros/tokens.py", line 102, in error
+   raise TokenException()
+makros.tokens.TokenException
+NEXT
+Error at line 5: Expected NAME, found OP Expected the enum name
+        | enum : Animals:
+
+             ¯¯¯
+             Error found here
+NEXT
+Error at line 5: Expected the enum name
+         | enum : Animals:
+
+              ¯¯¯
+              Error found here
+NEXT
+Error at line 5: Expected the enum name, found ':' (OP)
+         | enum : Animals:
+
+              ¯¯¯
+              Error found here
+NEXT
+Error at line 5: Expected the enum name, found ':'
+         | enum : Animals:
+               ¯¯¯
+               Error found here
